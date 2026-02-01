@@ -1,8 +1,28 @@
 import LightRays from '../components/LightRays';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+};
+
+  const isLargeScreen = useMediaQuery("(min-width: 768px)");
+
+
   return (
     <section className="relative w-full h-screen overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
@@ -11,7 +31,7 @@ const Hero = () => {
           raysColor="#00d1ff"
           raysSpeed={1}
           lightSpread={6}
-          rayLength={3}
+          rayLength={isLargeScreen ? 0.8 : 8}
           followMouse={true}
           mouseInfluence={0.1}
           noiseAmount={0}
@@ -39,7 +59,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-to-b from-transparent to-slate-950 z-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-16 bg-linear-to-b from-transparent to-slate-950 z-20 pointer-events-none" />
     </section>
   );
 };

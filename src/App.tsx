@@ -8,7 +8,6 @@ function App() {
     <div className="bg-slate-950 min-h-screen text-slate-200 selection:bg-cyan-500 selection:text-cyan-950">
       <Navbar />
       <Hero />
-      <div className=" from-slate-950 h-24 to-transparent z-20" />
       <Projects />
     </div>
   )
