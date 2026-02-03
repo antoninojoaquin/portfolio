@@ -2,6 +2,7 @@ import LightRays from '../components/LightRays';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useState, useEffect } from "react";
+import MarqueeComponent from "../components/MarqueeComponent"
 
 const Hero = () => {
   const useMediaQuery = (query: string) => {
@@ -20,11 +21,11 @@ const Hero = () => {
   return matches;
 };
 
-  const isLargeScreen = useMediaQuery("(min-width: 768px)");
+  const isLargeScreen = useMediaQuery("(min-width: 1120px)");
 
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-slate-950">
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-slate-950">
       <div className="absolute inset-0 z-0">
         <LightRays
           raysOrigin="top-center"
@@ -43,11 +44,11 @@ const Hero = () => {
         />
       </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-1">Antonino Joaquín</h1>
-          <p className="text-xl md:text-3xl max-w-2xl font-bold text-[#00d1ff]">
+          <h1 className="text-[42px] md:text-7xl font-bold md:mb-1 whitespace-nowrap">Antonino Joaquín</h1>
+          <p className="text-[32px] md:text-5xl max-w-2xl font-bold text-[#00d1ff]">
             Frontend Developer
           </p>
-          <div className="flex space-x-6 mt-6 text-3xl text-slate-200">
+          <div className="flex space-x-6 mt-6 text-[36px] text-slate-200">
             <a href="https://github.com/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors">
               <FaGithub />
             </a>
@@ -60,6 +61,9 @@ const Hero = () => {
           </div>
         </div>
       <div className="absolute bottom-0 left-0 w-full h-16 bg-linear-to-b from-transparent to-slate-950 z-20 pointer-events-none" />
+      <div className="absolute bottom-8 w-full">
+        <MarqueeComponent />
+      </div>    
     </section>
   );
 };
