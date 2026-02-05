@@ -17,7 +17,8 @@ const Projects = () => {
         />
         </div>
         
-
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-linear-to-b from-transparent to-slate-950 z-20 pointer-events-none" />
+        
     </section>
     );
 };

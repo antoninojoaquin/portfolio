@@ -21,23 +21,29 @@ const techs: TechItem[] = [
 
 const MarqueeComponent = () => {
   return (
-    <Marquee 
-      gradient={false} 
-      speed={50}
-      className="w-full p-4 z-30 text-slate-200 bg-transparent overflow-hidden"
-    >
-        <div className="flex gap-12 md:gap-15 lg:gap-32 xl:gap-24 2xl:gap-32 items-center pr-12 text-lg font-medium">
-          {techs.map((tech) => (
+    <div className="w-full mx-auto"> 
+      
+      <Marquee 
+        gradient={false}
+        speed={40}
+        pauseOnHover={true}
+        className="overflow-hidden"
+      >
+        <div className="flex items-center">
+          {[...techs, ...techs].map((tech, index) => (
             <div 
-              key={tech.name} 
-              className={`flex items-center gap-2 md:gap-4 transition-colors duration-300 hover:text-cyan-400 cursor-crosshair`}
+              key={`${tech.name}-${index}`} 
+              className="flex items-center gap-3 px-8 md:px-12 lg:px-16"
             >
-              <span className="text-[#00d1ff]">{tech.name}</span>
-              <tech.icon className="text-3xl md:text-4xl lg:text-5xl" />
+              <tech.icon className="text-3xl md:text-5xl"/>
+              <span className="text-lg md:text-xl font-semibold tracking-tight text-[#00d1ff]">
+                {tech.name}
+              </span>
             </div>
           ))}
         </div>
-    </Marquee>
+      </Marquee>
+    </div>
   );
 }
 

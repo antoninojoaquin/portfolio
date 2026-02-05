@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useState, useEffect } from "react";
 import MarqueeComponent from "../components/MarqueeComponent"
+import TextType from '../components/TextType';
 
 const Hero = () => {
   const useMediaQuery = (query: string) => {
@@ -45,17 +46,24 @@ const Hero = () => {
       </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
           <h1 className="text-[42px] md:text-7xl font-bold md:mb-1 whitespace-nowrap">Antonino Joaquín</h1>
-          <p className="text-[32px] md:text-5xl max-w-2xl font-bold text-[#00d1ff]">
-            Frontend Developer
-          </p>
+          <TextType 
+            text={["Frontend Developer", "Systems Analyst Student"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor
+            cursorCharacter="_"
+            deletingSpeed={50}
+            cursorBlinkDuration={0.5}
+            className="text-[32px] md:text-5xl text-[#00d1ff]"
+          />
           <div className="flex space-x-6 mt-6 text-[36px] text-slate-200">
-            <a href="https://github.com/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors">
+            <a href="https://github.com/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors duration-250">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors">
+            <a href="https://linkedin.com/in/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors duration-250">
               <FaLinkedin />
             </a>
-            <a href="mailto:antoninojoaquin06@gmail.com" className="hover:text-[#00d1ff] transition-colors">
+            <a href="mailto:antoninojoaquin06@gmail.com" className="hover:text-[#00d1ff] transition-colors duration-250">
               <SiGmail />
             </a>
           </div>
