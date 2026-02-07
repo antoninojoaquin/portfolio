@@ -1,7 +1,7 @@
 import FloatingLines from "../components/FloatingLines";
 import TiltedCard from "../components/TiltedCard";
 import timerrcImg from "../assets/images/timerrc-screenshot.png"
-import lmregionalesImg from "../assets/images/lmregionales-screenshot.png"
+import lmregionalesImg from "../assets/images/lmregionales-screenshot.jpg"
 import { SiTypescript, SiJavascript, SiReact, SiTailwindcss } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
