@@ -54,7 +54,7 @@ const Hero = () => {
             cursorCharacter="_"
             deletingSpeed={50}
             cursorBlinkDuration={0.5}
-            className="text-[32px] md:text-5xl text-[#00d1ff]"
+            className="text-[30px] md:text-5xl text-[#00d1ff]"
           />
           <div className="flex space-x-6 mt-6 text-[36px] text-slate-200">
             <a href="https://github.com/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="hover:text-[#00d1ff] transition-colors duration-250">

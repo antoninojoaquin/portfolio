@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar"    
 import Hero from "./pages/Hero"
 import Projects from "./pages/Projects"
-import Contact from "./pages/Contact"
-
+import About from "./pages/About"
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
-      <Contact />
+      <About />
     </div>
   )
 }
