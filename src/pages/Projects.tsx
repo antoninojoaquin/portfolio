@@ -1,4 +1,5 @@
 import FloatingLines from "../components/FloatingLines";
+import { useState, useEffect, useRef } from "react";
 import TiltedCard from "../components/TiltedCard";
 import timerrcImg from "../assets/images/timerrc-screenshot.webp"
 import lmregionalesImg from "../assets/images/lmregionales-screenshot.webp"
@@ -6,6 +7,27 @@ import { SiTypescript, SiJavascript, SiReact, SiTailwindcss } from "react-icons/
 import { FiExternalLink } from "react-icons/fi";
 
 const Projects = () => {
+  // Agregado: Estado para saber si se ve la sección
+const [isVisible, setIsVisible] = useState(false);
+// Agregado: Referencia para marcar la sección
+const sectionRef = useRef(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      // Si entra a la vista, isVisible pasa a true
+      setIsVisible(entry.isIntersecting);
+    },
+    { threshold: 0.1 } // Se activa al ver el 10% de la sección
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
   const projects = [
     {
       id: 1,
@@ -73,7 +95,7 @@ const Projects = () => {
                       <div className="flex items-center justify-between mt-5">
                         <div className="flex items-center gap-4">
                           <div className="h-[2px] w-12 bg-[#00d1ff] group-hover:w-16 transition-all duration-500 ease-out" />
-                          <div className="flex gap-3 text-slate-400 text-xl">
+                          <div className="flex gap-3 text-slate-400 text-xl hover:cursor-crosshair">
                             {project.technologies.map((Icon, index) => (
                               <span key={index} className="hover:text-[#00d1ff] transition-colors duration-300">
                                 {Icon}

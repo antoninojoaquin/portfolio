@@ -49,7 +49,7 @@ const About = () => {
                       Tengo 19 años y estudio <span className="text-[#00d1ff]">Analista de Sistemas</span>. Tengo interés en el <span className="text-[#00d1ff]">desarrollo web</span> y en la creación de interfaces modernas y eficientes.
                     </p>
                     <p>
-                      He trabajado en varios <span className="text-[#00d1ff]">proyectos personales</span> donde aplico tecnologías actuales y buenas prácticas para lograr <span className="text-[#00d1ff]">código claro</span> y una <span className="text-[#00d1ff]">buena experiencia de usuario</span>.
+                      He trabajado en varios <span className="text-[#00d1ff]">proyectos personales</span> que me ayudaron a <span className="text-[#00d1ff]">organizar mejor el código</span> y a crear <span className="text-[#00d1ff]">interfaces más claras y agradables</span>, aprendiendo y mejorando en cada proyecto.
                     </p>
                 </div>
             </div>
