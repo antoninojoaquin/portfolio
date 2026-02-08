@@ -18,7 +18,7 @@ const Projects = () => {
     {
       id: 2,
       title: "Los Molinos Regionales",
-      description: "E-commerce para productos regionales con foco en UX moderna y fluida. Desarrollé gestión de stock en tiempo real y un flujo de compra automatizado vía WhatsApp para maximizar la conversión.",
+      description: "E-commerce de artículos de parrilla con enfoque en UX fluida. Implementé persistencia de datos en Firestore y un flujo de pedidos vía WhatsApp para agilizar el contacto directo y la conversión.",
       image: lmregionalesImg,
       link: "https://lmregionales.vercel.app",
       technologies: [<SiReact />, <SiTypescript />, <SiTailwindcss />]
