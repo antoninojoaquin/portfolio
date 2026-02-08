@@ -1,5 +1,4 @@
 import FloatingLines from "../components/FloatingLines";
-import { useState, useEffect, useRef } from "react";
 import TiltedCard from "../components/TiltedCard";
 import timerrcImg from "../assets/images/timerrc-screenshot.webp"
 import lmregionalesImg from "../assets/images/lmregionales-screenshot.webp"
@@ -7,27 +6,6 @@ import { SiTypescript, SiJavascript, SiReact, SiTailwindcss } from "react-icons/
 import { FiExternalLink } from "react-icons/fi";
 
 const Projects = () => {
-  // Agregado: Estado para saber si se ve la sección
-const [isVisible, setIsVisible] = useState(false);
-// Agregado: Referencia para marcar la sección
-const sectionRef = useRef(null);
-
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      // Si entra a la vista, isVisible pasa a true
-      setIsVisible(entry.isIntersecting);
-    },
-    { threshold: 0.1 } // Se activa al ver el 10% de la sección
-  );
-
-  if (sectionRef.current) {
-    observer.observe(sectionRef.current);
-  }
-
-  return () => observer.disconnect();
-}, []);
-
   const projects = [
     {
       id: 1,
@@ -49,7 +27,7 @@ useEffect(() => {
 
   return (
     <section id="projects" className="relative w-full min-h-screen overflow-hidden bg-slate-950 flex flex-col items-center justify-center py-24">
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-slate-950 to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-64 bg-linear-to-b from-slate-950 to-transparent z-10 pointer-events-none" />
       
       <div className="absolute inset-0 z-0">
         <FloatingLines 
@@ -67,7 +45,7 @@ useEffect(() => {
       <div className="relative z-30 container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-2 justify-items-center">
           {projects.map((project) => (
-            <div key={project.id} className="w-full max-w-[400px]">
+            <div key={project.id} className="w-full max-w-100">
               <TiltedCard
                 imageSrc={project.image}
                 altText={project.title}
@@ -80,8 +58,8 @@ useEffect(() => {
                 showTooltip={false}
                 displayOverlayContent={true}
                 overlayContent={
-                  <div className="w-[100%] h-[400px] p-6 flex flex-col justify-end rounded-[15px] overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 md:via-slate-950/50 to-transparent rounded-[15px]" />
+                  <div className="w-full h-100 p-6 flex flex-col justify-end rounded-[15px] overflow-hidden group">
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/65 md:via-slate-950/50 to-transparent rounded-[15px]" />
                     
                     <div className="relative z-10">
                       <h3 className="text-2xl md:text-3xl font-black text-[#00d1ff] mt-1 tracking-tight italic">
@@ -94,7 +72,7 @@ useEffect(() => {
                       
                       <div className="flex items-center justify-between mt-5">
                         <div className="flex items-center gap-4">
-                          <div className="h-[2px] w-12 bg-[#00d1ff] group-hover:w-16 transition-all duration-500 ease-out" />
+                          <div className="h-0.5 w-12 bg-[#00d1ff] group-hover:w-16 transition-all duration-500 ease-out" />
                           <div className="flex gap-3 text-slate-400 text-xl hover:cursor-crosshair">
                             {project.technologies.map((Icon, index) => (
                               <span key={index} className="hover:text-[#00d1ff] transition-colors duration-300">
@@ -123,7 +101,7 @@ useEffect(() => {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-slate-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
 };
