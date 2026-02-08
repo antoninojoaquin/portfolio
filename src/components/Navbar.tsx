@@ -12,7 +12,6 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               className="cursor-pointer border-b-2 border-transparent hover:border-[#00d1ff] transition-colors duration-250 font-geistMono"
-              activeClass="border-[#00d1ff] text-[#00d1ff]"
             >
               Inicio
             </Link>
@@ -24,8 +23,6 @@ const Navbar = () => {
               smooth={true} 
               duration={500} 
               className="cursor-pointer border-b-2 border-transparent hover:border-[#00d1ff] transition-colors duration-250"
-              activeClass="border-[#00d1ff] text-[#00d1ff]"
-              spy={true}
             >
               Proyectos
             </Link>
@@ -37,8 +34,6 @@ const Navbar = () => {
               smooth={true} 
               duration={500} 
               className="cursor-pointer border-b-2 border-transparent hover:border-[#00d1ff] transition-colors duration-250"
-              activeClass="border-[#00d1ff] text-[#00d1ff]"
-              spy={true}
             >
               Sobre mí
             </Link>
