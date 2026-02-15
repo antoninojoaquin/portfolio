@@ -45,12 +45,12 @@ const About = () => {
                 </h2>
                 
                 <div className="text-slate-300 text-xl md:text-2xl leading-relaxed space-y-10 md:space-y-6">
-                    <p>
-                      Me especializo en crear <span className="text-[#00d1ff]">experiencias digitales modernas, eficientes y centradas en el usuario</span>. Mi enfoque principal es el desarrollo web, donde busco transformar ideas complejas en <span className="text-[#00d1ff]">interfaces claras y agradables</span>.
-                    </p>
-                    <p>
-                      A través de mis proyectos, he perfeccionado mi capacidad para <span className="text-[#00d1ff]">organizar código mantenible y aplicar las mejores prácticas</span> del desarrollo frontend. Cada desafío es para mí una oportunidad de <span className="text-[#00d1ff]">mejorar la arquitectura y el impacto visual de lo que construyo.</span>
-                    </p>
+<p className="mb-4">
+  Me especializo en crear <span className="text-[#00d1ff]">experiencias digitales modernas y eficientes</span>. Transformo ideas complejas en interfaces claras, priorizando siempre la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">intuitividad</span> y la <span className="text-[#00d1ff]">estética</span>.
+</p>
+<p>
+  A través de mis proyectos, busco siempre <span className="text-[#00d1ff]">organizar código limpio </span>y <span className="text-[#00d1ff]">aplicar buenas prácticas.</span> Cada desafío es una oportunidad para <span className="text-[#00d1ff]">mejorar la estructura y el impacto visual</span> de lo que construyo.
+</p>
                 </div>
             </div>
         </section>
