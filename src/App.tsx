@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar"
 import Hero from "./pages/Hero"
 import Projects from "./pages/Projects"
 import About from "./pages/About"
-import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
       <Hero />
       <Projects />
       <About />
-      <Analytics />
     </div>
   )
 }
