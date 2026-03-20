@@ -1,4 +1,4 @@
-# Portfolio Website - Antonino Joaquín
+# Portfolio - Antonino Joaquín
 
 Código fuente de mi sitio personal desarrollado con **React**, **TypeScript** y **Tailwind CSS**. Podés ver la versión en vivo en: **[antoninojoaquin.vercel.app](https://antoninojoaquin.vercel.app)**.
 
