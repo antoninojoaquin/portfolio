@@ -19,3 +19,13 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(50%); }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #020618;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00d1ff;
+  border-radius: 4px;
+}
