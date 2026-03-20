@@ -260,7 +260,7 @@ export default function FloatingLines({
   middleWavePosition,
   bottomWavePosition = { x: 2.0, y: -0.7, rotate: -1 },
   animationSpeed = 1,
-  interactive = true,
+  interactive = false,
   bendRadius = 5.0,
   bendStrength = -0.5,
   mouseDamping = 0.05,

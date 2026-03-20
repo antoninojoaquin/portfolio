@@ -35,7 +35,7 @@ const Hero = () => {
           lightSpread={6}
           rayLength={isLargeScreen ? 0.8 : 8}
           followMouse={true}
-          mouseInfluence={0.1}
+          mouseInfluence={0.2}
           noiseAmount={0}
           distortion={0}
           className="w-full h-full"

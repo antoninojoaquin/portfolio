@@ -32,12 +32,10 @@ const Projects = () => {
       <div className="absolute inset-0 z-0">
         <FloatingLines 
           linesGradient={["#99fffe","#00d1ff","#0090c1"]} 
-          enabledWaves={["top","middle","bottom"]}
           lineCount={5}
           lineDistance={5}
           bendRadius={5}
           bendStrength={-0.5}
-          interactive={true}
           parallax={true}
         />
       </div>

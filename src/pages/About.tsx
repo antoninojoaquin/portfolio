@@ -32,6 +32,9 @@ const About = () => {
                     raysSpeed={1}
                     lightSpread={6}
                     rayLength={isLargeScreen ? 0.8 : 8}
+                    followMouse={true}
+                    mouseInfluence={0.2}
+                    noiseAmount={0}
                     distortion={0}
                     className="w-full h-full"
                     pulsating={false}
@@ -39,13 +42,13 @@ const About = () => {
                     saturation={1}
                 />
             </div>
-            <div className="relative z-30 max-w-3xl mx-auto px-6 flex flex-col items-center text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight flex items-center justify-center gap-8">
-                    <LuFingerprint className="text-[#00d1ff] w-12 h-12" />
+            <div className="relative z-30 max-w-3xl 2xl:max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+                <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-white mb-6 tracking-tight flex items-center justify-center gap-8">
+                    <LuFingerprint className="text-[#00d1ff] 2xl:w-16 2xl:h-16 w-12 h-12" />
                     <span>Sobre mí</span>
                 </h2>
                 
-                <div className="text-slate-300 text-xl md:text-2xl leading-relaxed space-y-10 md:space-y-6">
+                <div className="text-slate-300 text-xl md:text-3xl xl:text-2xl 2xl:text-[34px] leading-relaxed space-y-10 md:space-y-6">
                 <p className="mb-4">
                   Me especializo en crear <span className="text-[#00d1ff]">experiencias digitales modernas y eficientes</span>. Transformo ideas complejas en interfaces claras, priorizando siempre la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">intuitividad</span> y la <span className="text-[#00d1ff]">estética</span>.
                 </p>
