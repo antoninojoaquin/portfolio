@@ -34,17 +34,17 @@ const PROJECTS_DATA: Project[] = [
 ];
 
 const ProjectCard = memo(({ project, index }: { project: Project; index: number }) => (
-  <article className="group relative border-b border-white/10 py-12 transition-all duration-500 hover:border-cyan-400/30">
+  <article className="group relative border-b border-white/10 py-12 transition-all duration-500 hover:border-[#00d1ff]/30">
     <span 
       aria-hidden="true"
-      className="absolute -left-1 top-12 font-mono text-[10rem] font-black leading-none text-white/3 select-none pointer-events-none transition-all duration-500 group-hover:text-cyan-400/10"
+      className="absolute -left-1 top-12 font-mono text-[10rem] font-black leading-none text-white/3 select-none pointer-events-none transition-all duration-500 group-hover:text-[#00d1ff]/10"
     >
       {String(index + 1).padStart(2, "0")}
     </span>
 
     <div className="relative grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px] md:gap-16 items-center">
       <div className="flex flex-col gap-6">
-        <h3 className="text-3xl font-black text-cyan-400 md:text-4xl">
+        <h3 className="text-3xl font-black text-[#00d1ff] md:text-4xl">
           {project.title}
         </h3>
 
@@ -56,7 +56,7 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
           {project.technologies.map((tech, i) => (
             <span
               key={i}
-              className="flex h-9 w-9 items-center justify-center rounded border border-white/10 text-lg text-white/30 transition-all duration-200 hover:border-cyan-400/50 hover:text-cyan-400"
+              className="flex h-9 w-9 items-center justify-center rounded border border-white/10 text-lg text-white/30 transition-all duration-200 hover:border-[#00d1ff]/50 hover:text-[#00d1ff]"
             >
               {tech}
             </span>
@@ -101,14 +101,12 @@ ProjectCard.displayName = "ProjectCard";
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative min-h-screen bg-slate-950 px-6 py-24">
+    <section id="projects" className="relative min-h-screen bg-slate-950 px-6 py-24 flex items-center justify-center">
       <div className="relative mx-auto max-w-5xl">
-        <header className="mb-20 border-b border-cyan-400/10 pb-8">
           <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-white flex gap-4 tracking-tight">
             <FaRocket className="text-[#00d1ff] 2xl:w-16 2xl:h-16 w-12 h-12" />
             <span>Proyectos</span>
           </h2>
-        </header>
 
         <div className="flex flex-col">
           {PROJECTS_DATA.map((project, index) => (
