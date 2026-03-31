@@ -42,8 +42,9 @@ const About = () => {
                     saturation={1}
                 />
             </div>
-            <div className="relative z-30 max-w-3xl 2xl:max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-                <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-white mb-6 tracking-tight flex items-center justify-center gap-4">
+            <header className="mb-20 border-b border-[#00d1ff]/10 pb-8"></header>
+            <div className="relative z-30 max-w-3xl 2xl:max-w-5xl mx-auto px-6 flex flex-col">
+                <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-white mb-6 tracking-tight flex items-center gap-4">
                     <LuFingerprint className="text-[#00d1ff] 2xl:w-16 2xl:h-16 w-12 h-12" />
                     <span>Sobre mí</span>
                 </h2>
