@@ -49,7 +49,7 @@ const About = () => {
                     <span>Sobre mí</span>
                 </h2>
                 
-                <div className="text-slate-300 text-xl md:text-3xl xl:text-2xl 2xl:text-[34px] leading-relaxed space-y-10 md:space-y-6">
+                <div className="text-slate-300 text-xl md:text-3xl xl:text-2xl 2xl:text-3xl leading-relaxed space-y-10 md:space-y-6">
                 <p className="mb-4">
                   Me especializo en crear <span className="text-[#00d1ff]">experiencias digitales modernas y eficientes</span>. Transformo ideas complejas en interfaces claras, priorizando siempre la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">intuitividad</span> y la <span className="text-[#00d1ff]">estética</span>.
                 </p>

@@ -36,7 +36,7 @@ const MarqueeComponent = () => {
               className="flex items-center gap-3 px-8 md:px-12 lg:px-16"
             >
               <tech.icon className="text-3xl md:text-5xl"/>
-              <span className="text-md md:text-xl font-semibold tracking-tight font-mono text-[#00d1ff]">
+              <span className="text-md md:text-xl 2xl:text-3xl font-semibold tracking-tight font-mono text-[#00d1ff]">
                 {tech.name}
               </span>
             </div>
