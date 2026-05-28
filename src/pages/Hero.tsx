@@ -48,11 +48,11 @@ const Hero = () => {
           <h1 className="text-[42px] md:text-7xl font-bold md:mb-1 whitespace-nowrap">Antonino Joaquín</h1>
           <TextType 
             text={["Frontend Developer", "Systems Analyst Student"]}
-            typingSpeed={75}
-            pauseDuration={1500}
+            typingSpeed={60}
+            pauseDuration={1000}
             showCursor
             cursorCharacter="_"
-            deletingSpeed={50}
+            deletingSpeed={60}
             cursorBlinkDuration={0.5}
             className="text-[30px] md:text-5xl text-[#00d1ff]"
           />

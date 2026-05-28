@@ -25,7 +25,7 @@ const MarqueeComponent = () => {
       
       <Marquee 
         gradient={false}
-        speed={80}
+        speed={100}
         pauseOnHover={true}
         className="overflow-hidden"
       >

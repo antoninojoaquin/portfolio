@@ -56,7 +56,7 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
           {project.technologies.map((tech, i) => (
             <span
               key={i}
-              className="flex h-9 w-9 items-center justify-center rounded border border-white/10 text-lg text-white/30 transition-all duration-200 hover:border-[#00d1ff]/50 hover:text-[#00d1ff]"
+              className="flex h-12 w-12 items-center justify-center rounded border border-white/10 text-3xl text-white/30 transition-all duration-200 hover:border-[#00d1ff]/50 hover:text-[#00d1ff]"
             >
               {tech}
             </span>
@@ -102,7 +102,7 @@ ProjectCard.displayName = "ProjectCard";
 const Projects = () => {
   return (
     <section id="projects" className="relative min-h-screen bg-slate-950 px-6 py-24 flex items-center justify-center">
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-5xl w-full">
           <h2 className="text-4xl md:text-5xl 2xl:text-7xl font-bold text-white flex gap-4 tracking-tight">
             <FaRocket className="text-[#00d1ff] 2xl:w-16 2xl:h-16 w-12 h-12" />
             <span>Proyectos</span>
