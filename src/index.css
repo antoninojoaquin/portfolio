@@ -29,3 +29,8 @@
   background: #00d1ff;
   border-radius: 4px;
 }
+
+canvas {
+  will-change: transform;
+  transform: translateZ(0);
+}
