@@ -1,8 +1,8 @@
 # Portfolio - Antonino Joaquín
 
-Código fuente de mi sitio personal desarrollado con **React**, **TypeScript** y **Tailwind CSS**. Podés ver la versión en vivo en: **[antoninojoaquin.vercel.app](https://antoninojoaquin.vercel.app)**.
+Código fuente de mi sitio personal como **Mobile Developer** (React Native · Expo), desarrollado con **React**, **TypeScript** y **Tailwind CSS**. Podés ver la versión en vivo en: **[antoninojoaquin.vercel.app](https://antoninojoaquin.vercel.app)**.
 
-El proyecto está diseñado con un enfoque minimalista para centralizar mis desarrollos y trayectoria técnica.
+El proyecto está diseñado con un enfoque minimalista para centralizar mis apps móviles, proyectos web y trayectoria técnica.
 
 ![Preview del Portfolio](https://antoninojoaquin.vercel.app/captura-portfolio.png)
 
@@ -11,8 +11,8 @@ El proyecto está diseñado con un enfoque minimalista para centralizar mis desa
 El sitio se estructura en tres secciones clave:
 
 * **Inicio:** Presentación con un *typing effect* dinámico que alterna entre mis roles y un *marquee* que muestra las tecnologías principales.
-* **Proyectos:** Galería de trabajos implementada con *tilted cards* interactivas, destacando proyectos de e-commerce y herramientas de precisión.
-* **Sobre mí:** Espacio dedicado a mi formación académica y mi enfoque en el desarrollo de interfaces eficientes y código limpio.
+* **Proyectos:** Apps móviles (NenaTerm, Los Molinos Mobile, Little Lemon) con capturas en formato celular, y la tienda web de Los Molinos.
+* **Sobre mí:** Mi enfoque en desarrollo mobile, mi formación como estudiante de Análisis de Sistemas y cómo encaro cada producto.
 
 ---
 Si querés contactarme o ver mi perfil profesional, podés encontrarme en **[LinkedIn](https://www.linkedin.com/in/antoninojoaquin/)**.
