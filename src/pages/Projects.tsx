@@ -103,7 +103,7 @@ const PLATFORM_LABEL: Record<Platform, { label: string; icon: React.ReactNode }>
 };
 
 const ProjectPreview = ({ project }: { project: Project }) => {
-  const imgClass = "w-full h-full object-cover transition-all duration-700 ease-out grayscale group-hover/img:grayscale-0";
+  const imgClass = "w-full h-full object-cover transition-all duration-700 ease-out can-hover:grayscale group-hover/img:grayscale-0";
 
   if (project.platform === "web") {
     return (
@@ -186,10 +186,10 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
           href={project.links[0].url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/img relative block mb-1"
+          className="group/img relative block mb-1 touch:pointer-events-none"
           aria-label={`${project.links[0].label}: ${project.title}`}
         >
-          <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover/img:opacity-100">
+          <div className="absolute inset-0 z-20 flex touch:hidden items-center justify-center opacity-0 transition-opacity duration-300 group-hover/img:opacity-100">
             <span className="flex items-center gap-2 rounded-full bg-[#00d1ff] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-black shadow-xl transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
               {project.links[0].icon}
               {project.links[0].label}
@@ -200,6 +200,16 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
         </a>
 
         <div className={`grid grid-cols-1 gap-2 ${project.platform === "mobile" ? "mt-4" : ""}`}>
+          {/* On touch screens the image overlay never shows, so the main link gets its own button */}
+          <a
+            href={project.links[0].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden touch:flex items-center justify-center gap-2 w-full py-2 rounded bg-[#00d1ff] text-xs font-mono font-bold uppercase tracking-wider text-black"
+          >
+            {project.links[0].icon}
+            {project.links[0].label}
+          </a>
           {project.links.slice(1).map((link) => (
             <a
               key={link.url}

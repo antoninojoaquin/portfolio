@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
 @import "tailwindcss";
 
+/* Hover-capable devices vs touch screens (no hover state) */
+@custom-variant can-hover (@media (hover: hover));
+@custom-variant touch (@media (hover: none));
+
 @theme {
   --font-sans: "Geist", sans-serif;
   --font-mono: "Geist Mono", monospace;
