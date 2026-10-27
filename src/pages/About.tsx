@@ -50,7 +50,7 @@ const About = () => {
                 
                 <div className="text-slate-300 text-xl md:text-3xl xl:text-2xl 2xl:text-3xl leading-relaxed space-y-10 md:space-y-6">
                 <p className="mb-4">
-                  Desarrollo <span className="text-[#00d1ff]">apps móviles con React Native y Expo</span>. Vengo del frontend web, y llevo a Android e iOS lo que aprendí ahí: priorizar la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">performance</span> y los detalles que hacen que una app <span className="text-[#00d1ff]">se sienta nativa</span>.
+                  Desarrollo <span className="text-[#00d1ff]">apps móviles con React Native</span>. Vengo del frontend web, y llevo a Android e iOS lo que aprendí ahí: priorizar la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">performance</span> y los detalles que hacen que una app <span className="text-[#00d1ff]">se sienta nativa</span>.
                 </p>
                 <p>
                   Me interesa el producto completo: desde el <span className="text-[#00d1ff]">diseño de cada pantalla</span> hasta <span className="text-[#00d1ff]">publicar builds y actualizaciones OTA</span>. Como estudiante de Análisis de Sistemas, busco <span className="text-[#00d1ff]">código limpio y tipado</span>, y arquitecturas donde web y mobile compartan una misma fuente de datos.
