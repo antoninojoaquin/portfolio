@@ -50,10 +50,10 @@ const About = () => {
                 
                 <div className="text-slate-300 text-xl md:text-3xl xl:text-2xl 2xl:text-3xl leading-relaxed space-y-10 md:space-y-6">
                 <p className="mb-4">
-                  Me especializo en crear <span className="text-[#00d1ff]">experiencias digitales modernas y eficientes</span>. Transformo ideas complejas en interfaces claras, priorizando siempre la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">intuitividad</span> y la <span className="text-[#00d1ff]">estética</span>.
+                  Desarrollo <span className="text-[#00d1ff]">apps móviles con React Native y Expo</span>. Vengo del frontend web, y llevo a Android e iOS lo que aprendí ahí: priorizar la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">performance</span> y los detalles que hacen que una app <span className="text-[#00d1ff]">se sienta nativa</span>.
                 </p>
                 <p>
-                  A través de mis proyectos, busco siempre <span className="text-[#00d1ff]">organizar código limpio </span>y <span className="text-[#00d1ff]">aplicar buenas prácticas.</span> Cada desafío es una oportunidad para <span className="text-[#00d1ff]">mejorar la estructura y el impacto visual</span> de lo que construyo.
+                  Me interesa el producto completo: desde el <span className="text-[#00d1ff]">diseño de cada pantalla</span> hasta <span className="text-[#00d1ff]">publicar builds y actualizaciones OTA</span>. Como estudiante de Análisis de Sistemas, busco <span className="text-[#00d1ff]">código limpio y tipado</span>, y arquitecturas donde web y mobile compartan una misma fuente de datos.
                 </p>
                 </div>
             </div>
