@@ -12,7 +12,7 @@ export const Footer = () => {
             <a href="https://www.linkedin.com/in/antoninojoaquin" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan-400 transition-colors duration-400">
                 <FaLinkedin className="w-8 h-8 md:w-10 md:h-10" />
             </a>
-            <a href="mailto:joaquin.antonino@gmail.com" className="text-white hover:text-cyan-400 transition-colors duration-400">
+            <a href="mailto:antoninojoaquin06@gmail.com" className="text-white hover:text-cyan-400 transition-colors duration-400">
                 <SiGmail className="w-8 h-8 md:w-10 md:h-10" />
           </a>
         </div>
