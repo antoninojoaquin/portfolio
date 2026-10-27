@@ -1,6 +1,6 @@
 import FastMarqueeLib from "react-fast-marquee";
 import React, { useId } from 'react';
-import { SiTypescript, SiReact, SiGithub, SiExpo, SiFirebase } from "react-icons/si";
+import { SiTypescript, SiReact, SiGithub, SiExpo, SiFirebase, SiAndroidstudio } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
 // @ts-ignore
@@ -41,6 +41,7 @@ const techs: TechItem[] = [
   { name: "TypeScript", icon: SiTypescript },
   { name: "React", icon: SiReact },
   { name: "Firebase", icon: SiFirebase },
+  { name: "Android Studio", icon: SiAndroidstudio },
   { name: "C#", icon: CSharpIcon },
   { name: ".NET", icon: DotnetIcon },
   { name: "GitHub", icon: SiGithub },
