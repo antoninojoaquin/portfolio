@@ -1,6 +1,7 @@
 import FastMarqueeLib from "react-fast-marquee";
 import React from 'react'; 
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiGit, SiGithub } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiGit, SiGithub, SiExpo, SiFirebase } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 // @ts-ignore
 const Marquee = FastMarqueeLib.default ? FastMarqueeLib.default : FastMarqueeLib;
@@ -11,9 +12,12 @@ interface TechItem {
 }
 
 const techs: TechItem[] = [
-  { name: "React", icon: SiReact },
-  { name: "JavaScript", icon: SiJavascript },
+  { name: "React Native", icon: TbBrandReactNative },
+  { name: "Expo", icon: SiExpo },
   { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: SiReact },
+  { name: "Firebase", icon: SiFirebase },
+  { name: "JavaScript", icon: SiJavascript },
   { name: "Tailwind", icon: SiTailwindcss },
   { name: "Git", icon: SiGit },
   { name: "GitHub", icon: SiGithub },
