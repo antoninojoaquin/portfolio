@@ -1,15 +1,39 @@
 import FastMarqueeLib from "react-fast-marquee";
-import React from 'react'; 
-import { SiTypescript, SiReact, SiDotnet, SiGithub, SiExpo, SiFirebase } from "react-icons/si";
-import { TbBrandReactNative, TbBrandCSharp } from "react-icons/tb";
+import React, { useId } from 'react';
+import { SiTypescript, SiReact, SiGithub, SiExpo, SiFirebase } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 // @ts-ignore
 const Marquee = FastMarqueeLib.default ? FastMarqueeLib.default : FastMarqueeLib;
 
 interface TechItem {
   name: string;
-  icon: React.ElementType; 
+  icon: React.ElementType;
 }
+
+// Badge logos (shape with the text cut out) — react-icons only ships the bare wordmarks
+const BadgeIcon = ({ shape, label, fontSize, className }: { shape: React.ReactNode; label: string; fontSize: number; className?: string }) => {
+  const maskId = useId();
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" className={className}>
+      <mask id={maskId}>
+        <g fill="white">{shape}</g>
+        <text x="12" y="12.5" textAnchor="middle" dominantBaseline="middle" fontSize={fontSize} fontWeight="700" fontFamily="Arial, sans-serif" fill="black">
+          {label}
+        </text>
+      </mask>
+      <rect width="24" height="24" mask={`url(#${maskId})`} />
+    </svg>
+  );
+};
+
+const CSharpIcon = ({ className }: { className?: string }) => (
+  <BadgeIcon shape={<polygon points="12,1 21.5,6.5 21.5,17.5 12,23 2.5,17.5 2.5,6.5" />} label="C#" fontSize={9} className={className} />
+);
+
+const DotnetIcon = ({ className }: { className?: string }) => (
+  <BadgeIcon shape={<rect x="1" y="1" width="22" height="22" rx="4" />} label=".NET" fontSize={7.5} className={className} />
+);
 
 const techs: TechItem[] = [
   { name: "React Native", icon: TbBrandReactNative },
@@ -17,8 +41,8 @@ const techs: TechItem[] = [
   { name: "TypeScript", icon: SiTypescript },
   { name: "React", icon: SiReact },
   { name: "Firebase", icon: SiFirebase },
-  { name: "C#", icon: TbBrandCSharp },
-  { name: ".NET", icon: SiDotnet },
+  { name: "C#", icon: CSharpIcon },
+  { name: ".NET", icon: DotnetIcon },
   { name: "GitHub", icon: SiGithub },
 ];
 
