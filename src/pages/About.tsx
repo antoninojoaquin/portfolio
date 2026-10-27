@@ -53,7 +53,7 @@ const About = () => {
                   Desarrollo <span className="text-[#00d1ff]">apps móviles con React Native</span>. Vengo del frontend web, y llevo a Android e iOS lo que aprendí ahí: priorizar la <span className="text-[#00d1ff]">usabilidad</span>, la <span className="text-[#00d1ff]">performance</span> y los detalles que hacen que una app <span className="text-[#00d1ff]">se sienta nativa</span>.
                 </p>
                 <p>
-                  Me interesa el producto completo: desde el <span className="text-[#00d1ff]">diseño de cada pantalla</span> hasta <span className="text-[#00d1ff]">publicar builds y actualizaciones OTA</span>. Como estudiante de Análisis de Sistemas, busco <span className="text-[#00d1ff]">código limpio y tipado</span>, y arquitecturas donde web y mobile compartan una misma fuente de datos.
+                  Me interesa el producto completo: desde el <span className="text-[#00d1ff]">diseño de cada pantalla</span> hasta <span className="text-[#00d1ff]">publicar builds y actualizaciones OTA</span>. Como estudiante de Análisis de Sistemas, antes de escribir código pienso en <span className="text-[#00d1ff]">quién va a usar la app</span> y <span className="text-[#00d1ff]">qué problema le resuelve</span>.
                 </p>
                 </div>
             </div>
