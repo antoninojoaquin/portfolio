@@ -28,11 +28,11 @@ const BadgeIcon = ({ shape, label, fontSize, className }: { shape: React.ReactNo
 };
 
 const CSharpIcon = ({ className }: { className?: string }) => (
-  <BadgeIcon shape={<polygon points="12,1 21.5,6.5 21.5,17.5 12,23 2.5,17.5 2.5,6.5" />} label="C#" fontSize={9} className={`text-[#00d1ff] ${className ?? ""}`} />
+  <BadgeIcon shape={<polygon points="12,1 21.5,6.5 21.5,17.5 12,23 2.5,17.5 2.5,6.5" />} label="C#" fontSize={9} className={className} />
 );
 
 const DotnetIcon = ({ className }: { className?: string }) => (
-  <BadgeIcon shape={<rect x="1" y="1" width="22" height="22" rx="4" />} label=".NET" fontSize={7.5} className={`text-[#00d1ff] ${className ?? ""}`} />
+  <BadgeIcon shape={<rect x="1" y="1" width="22" height="22" rx="4" />} label=".NET" fontSize={7.5} className={className} />
 );
 
 const techs: TechItem[] = [
