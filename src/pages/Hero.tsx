@@ -46,7 +46,7 @@ const Hero = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center px-4">
           <h1 className="text-[42px] md:text-7xl font-bold md:mb-1 whitespace-nowrap">Antonino Joaquín</h1>
           <TextType 
-            text={["Frontend Developer", "Systems Analyst Student"]}
+            text={["Mobile Developer", "React Native · Expo", "Systems Analyst Student"]}
             typingSpeed={60}
             pauseDuration={1000}
             showCursor
