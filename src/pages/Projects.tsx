@@ -1,10 +1,19 @@
 import { memo } from "react";
-import timerrcImg from "../assets/images/timerrc-screenshot.webp";
-import lmregionalesImg from "../assets/images/lmregionales-screenshot.webp";
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiFirebase, SiGithub } from "react-icons/si";
+import nenatermGlosarioImg from "../assets/images/nenaterm-glosario.webp";
+import nenatermPracticaImg from "../assets/images/nenaterm-practica.webp";
+import nenatermJuegoImg from "../assets/images/nenaterm-juego.webp";
+import lmMobileProductsImg from "../assets/images/lmmobile-products.webp";
+import lmMobileFavoritesImg from "../assets/images/lmmobile-favorites.webp";
+import lmMobileCartImg from "../assets/images/lmmobile-cart.webp";
+import littleLemonWelcomeImg from "../assets/images/littlelemon-welcome.webp";
+import littleLemonSubscribeImg from "../assets/images/littlelemon-subscribe.webp";
+import lmFrontendImg from "../assets/images/lmfrontend-catalogo.webp";
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiFirebase, SiGithub, SiExpo } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
-import { FiSmartphone, FiMonitor} from "react-icons/fi";
+import { FiSmartphone, FiMonitor, FiDownload } from "react-icons/fi";
 import { FaRocket } from "react-icons/fa";
+
+type Platform = "mobile" | "web";
 
 interface ProjectLink {
   label: string;
@@ -12,71 +21,161 @@ interface ProjectLink {
   icon: React.ReactNode;
 }
 
+interface Technology {
+  name: string;
+  icon: React.ReactNode;
+}
+
 interface Project {
   id: number;
   title: string;
+  platform: Platform;
   description: string;
-  image: string;
+  images: string[];
   links: ProjectLink[];
-  technologies: React.ReactNode[];
+  technologies: Technology[];
 }
+
+const TECH = {
+  reactNative: { name: "React Native", icon: <TbBrandReactNative /> },
+  expo: { name: "Expo", icon: <SiExpo /> },
+  react: { name: "React", icon: <SiReact /> },
+  typescript: { name: "TypeScript", icon: <SiTypescript /> },
+  javascript: { name: "JavaScript", icon: <SiJavascript /> },
+  tailwind: { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  firebase: { name: "Firebase", icon: <SiFirebase /> },
+} satisfies Record<string, Technology>;
+
+const repoLink = (repo: string): ProjectLink => ({
+  label: "Visitar Repositorio",
+  url: `https://github.com/antoninojoaquin/${repo}`,
+  icon: <SiGithub size={12} />,
+});
 
 const PROJECTS_DATA: Project[] = [
   {
     id: 1,
-    title: "timerrc",
-    description: "Plataforma de alta precisión para speedcubers con cronómetro en tiempo real. Implementé scrambles algorítmicos, persistencia local y analíticas de usuario.",
-    image: timerrcImg,
+    title: "NenaTerm",
+    platform: "mobile",
+    description: "App Android / iOS para aprender vocabulario técnico en inglés. Glosario con buscador y filtros, cuatro minijuegos de práctica, pronunciación con text-to-speech y traductor, acompañados por Nena, una mascota en pixel art que reacciona a cada respuesta. Distribuida como APK con actualizaciones OTA vía EAS.",
+    images: [nenatermGlosarioImg, nenatermPracticaImg, nenatermJuegoImg],
     links: [
-      { label: "Visitar Web", url: "https://timerrc.com", icon: <FiMonitor size={12} /> },
+      { label: "Descargar APK", url: "https://github.com/antoninojoaquin/NenaTerm/releases/latest/download/NenaTerm.apk", icon: <FiDownload size={12} /> },
+      repoLink("NenaTerm"),
     ],
-    technologies: [<SiReact key="r" />, <SiJavascript key="j" />, <SiTailwindcss key="t" />],
+    technologies: [TECH.reactNative, TECH.expo, TECH.typescript],
   },
   {
     id: 2,
-    title: "Los Molinos Regionales (Web + Mobile)",
-    description: "Ecosistema digital completo. E-commerce web con enfoque en UX y aplicación móvil nativa. Ambas plataformas sincronizan stock en tiempo real mediante Firestore y comparten lógica de checkout vía WhatsApp.",
-    image: lmregionalesImg,
+    title: "Los Molinos Mobile",
+    platform: "mobile",
+    description: "Versión nativa del e-commerce de Los Molinos Regionales. Consume la misma base de Firestore que la web como única fuente de verdad: búsqueda y filtros táctiles, favoritos persistidos, carrito limitado por stock real y checkout por deep link a WhatsApp. Ubicación y contacto resueltos con intents nativos en lugar de mapas embebidos.",
+    images: [lmMobileProductsImg, lmMobileFavoritesImg, lmMobileCartImg],
+    links: [repoLink("los-molinos-mobile")],
+    technologies: [TECH.reactNative, TECH.expo, TECH.typescript, TECH.firebase],
+  },
+  {
+    id: 3,
+    title: "Little Lemon",
+    platform: "mobile",
+    description: "Proyecto final del curso de React Native de la Meta React Native Specialization. Cumple la consigna con un rediseño propio: sistema de diseño centralizado, navegación con Native Stack, validación de email accesible, manejo de safe areas y teclado, y deep linking a la pantalla de suscripción.",
+    images: [littleLemonWelcomeImg, littleLemonSubscribeImg],
+    links: [repoLink("LittleLemonApp")],
+    technologies: [TECH.reactNative, TECH.expo, TECH.javascript],
+  },
+  {
+    id: 4,
+    title: "Los Molinos Frontend",
+    platform: "web",
+    description: "Tienda online de un negocio de accesorios para parrilla, pensada primero para celular. Catálogo y stock en tiempo real desde Firestore, carrito sincronizado entre pestañas, zoom táctil y checkout por WhatsApp. Rutas con carga diferida (bundle inicial ~80 KB gzip) e imágenes optimizadas con Cloudinary.",
+    images: [lmFrontendImg],
     links: [
       { label: "Visitar Web", url: "https://lmregionales.vercel.app", icon: <FiMonitor size={12} /> },
-      { label: "Visitar Repositorio", url: "https://github.com/antoninojoaquin/los-molinos-frontend", icon: <SiGithub size={12} /> },
-      { label: "Visitar Repositorio App", url: "https://github.com/antoninojoaquin/los-molinos-mobile", icon: <FiSmartphone size={12} /> }
+      repoLink("los-molinos-frontend"),
     ],
-    technologies: [
-      <SiReact key="r" />, 
-      <TbBrandReactNative key="rn" />, 
-      <SiTypescript key="ts" />, 
-      <SiFirebase key="fb" />
-    ],
+    technologies: [TECH.react, TECH.javascript, TECH.tailwind, TECH.firebase],
   },
 ];
 
+const PLATFORM_LABEL: Record<Platform, { label: string; icon: React.ReactNode }> = {
+  mobile: { label: "App Mobile", icon: <FiSmartphone size={12} /> },
+  web: { label: "Web", icon: <FiMonitor size={12} /> },
+};
+
+const ProjectPreview = ({ project }: { project: Project }) => {
+  const imgClass = "w-full h-full object-cover transition-all duration-700 ease-out grayscale group-hover/img:grayscale-0";
+
+  if (project.platform === "web") {
+    return (
+      <div className="relative overflow-hidden rounded-sm aspect-video">
+        <img
+          src={project.images[0]}
+          alt={`Preview del proyecto ${project.title}`}
+          loading="lazy"
+          className={`${imgClass} group-hover/img:scale-110`}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="grid gap-3 py-2"
+      style={{ gridTemplateColumns: `repeat(${project.images.length}, minmax(0, 1fr))` }}
+    >
+      {project.images.map((src, i) => (
+        <div
+          key={src}
+          className={`overflow-hidden rounded-2xl border-4 border-white/10 aspect-[9/19.5] transition-all duration-500 group-hover/img:border-[#00d1ff]/30 ${
+            i % 2 === 1 ? "translate-y-4" : ""
+          }`}
+        >
+          <img
+            src={src}
+            alt={`Captura ${i + 1} de ${project.title}`}
+            loading="lazy"
+            className={imgClass}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const ProjectCard = memo(({ project, index }: { project: Project; index: number }) => (
   <article className="group relative border-b border-white/10 py-12 transition-all duration-500 hover:border-[#00d1ff]/30">
-    <span 
+    <span
       aria-hidden="true"
       className="absolute -left-1 top-12 font-mono text-[10rem] font-black leading-none text-white/3 select-none pointer-events-none transition-all duration-500 group-hover:text-[#00d1ff]/10"
     >
       {String(index + 1).padStart(2, "0")}
     </span>
 
-    <div className="relative grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px] md:gap-16 items-center">
+    <div className="relative grid grid-cols-1 gap-10 md:grid-cols-[1fr_360px] md:gap-16 items-center">
       <div className="flex flex-col gap-6">
-        <h3 className="text-3xl font-black text-[#00d1ff] md:text-4xl">
-          {project.title}
-        </h3>
+        <div className="flex flex-col gap-3">
+          <span className="flex w-fit items-center gap-2 rounded-full border border-[#00d1ff]/30 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#00d1ff]/80">
+            {PLATFORM_LABEL[project.platform].icon}
+            {PLATFORM_LABEL[project.platform].label}
+          </span>
+          <h3 className="text-3xl font-black text-[#00d1ff] md:text-4xl">
+            {project.title}
+          </h3>
+        </div>
 
         <p className="max-w-lg font-mono text-sm leading-relaxed text-white/50">
           {project.description}
         </p>
 
         <div className="flex items-center gap-3">
-          {project.technologies.map((tech, i) => (
+          {project.technologies.map((tech) => (
             <span
-              key={i}
+              key={tech.name}
+              title={tech.name}
+              aria-label={tech.name}
               className="flex h-12 w-12 items-center justify-center rounded border border-white/10 text-3xl text-white/30 transition-all duration-200 hover:border-[#00d1ff]/50 hover:text-[#00d1ff]"
             >
-              {tech}
+              {tech.icon}
             </span>
           ))}
         </div>
@@ -87,11 +186,9 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
           href={project.links[0].url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/img relative block overflow-hidden rounded-sm aspect-video mb-1"
-          aria-label={`Visitar sitio web de ${project.title}`}
+          className="group/img relative block mb-1"
+          aria-label={`${project.links[0].label}: ${project.title}`}
         >
-          <div className="absolute inset-0 z-10 bg-[#00d1ff] mix-blend-multiply opacity-0 transition-opacity duration-500 group-hover/img:opacity-20" />
-          
           <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover/img:opacity-100">
             <span className="flex items-center gap-2 rounded-full bg-[#00d1ff] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-black shadow-xl transform translate-y-2 group-hover/img:translate-y-0 transition-transform">
               {project.links[0].icon}
@@ -99,18 +196,13 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
             </span>
           </div>
 
-          <img
-            src={project.image}
-            alt={`Preview del proyecto ${project.title}`}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/img:scale-110 grayscale group-hover/img:grayscale-0"
-          />
+          <ProjectPreview project={project} />
         </a>
 
-        <div className="grid grid-cols-1 gap-2">
-          {project.links.slice(1).map((link, idx) => (
+        <div className={`grid grid-cols-1 gap-2 ${project.platform === "mobile" ? "mt-4" : ""}`}>
+          {project.links.slice(1).map((link) => (
             <a
-              key={idx}
+              key={link.url}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
