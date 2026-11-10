@@ -1,14 +1,12 @@
 import { memo } from "react";
-import nenatermGlosarioImg from "../assets/images/nenaterm-glosario.webp";
-import nenatermPracticaImg from "../assets/images/nenaterm-practica.webp";
-import nenatermJuegoImg from "../assets/images/nenaterm-juego.webp";
+import nenatermLandingImg from "../assets/images/nenaterm-landing.webp";
 import lmMobileProductsImg from "../assets/images/lmmobile-products.webp";
 import lmMobileFavoritesImg from "../assets/images/lmmobile-favorites.webp";
 import lmMobileCartImg from "../assets/images/lmmobile-cart.webp";
 import littleLemonWelcomeImg from "../assets/images/littlelemon-welcome.webp";
 import littleLemonSubscribeImg from "../assets/images/littlelemon-subscribe.webp";
 import lmFrontendImg from "../assets/images/lmfrontend-catalogo.webp";
-import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiFirebase, SiGithub, SiExpo } from "react-icons/si";
+import { SiTypescript, SiJavascript, SiReact, SiTailwindcss, SiFirebase, SiGithub, SiExpo, SiNextdotjs } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { FiSmartphone, FiMonitor, FiDownload } from "react-icons/fi";
 import { FaRocket } from "react-icons/fa";
@@ -40,6 +38,7 @@ const TECH = {
   reactNative: { name: "React Native", icon: <TbBrandReactNative /> },
   expo: { name: "Expo", icon: <SiExpo /> },
   react: { name: "React", icon: <SiReact /> },
+  nextjs: { name: "Next.js", icon: <SiNextdotjs /> },
   typescript: { name: "TypeScript", icon: <SiTypescript /> },
   javascript: { name: "JavaScript", icon: <SiJavascript /> },
   tailwind: { name: "Tailwind CSS", icon: <SiTailwindcss /> },
@@ -57,13 +56,14 @@ const PROJECTS_DATA: Project[] = [
     id: 1,
     title: "NenaTerm",
     platform: "mobile",
-    description: "App Android / iOS para aprender vocabulario técnico en inglés. Glosario con buscador y filtros, cuatro minijuegos de práctica, pronunciación con text-to-speech y traductor, acompañados por Nena, una mascota en pixel art que reacciona a cada respuesta. Distribuida como APK con actualizaciones OTA vía EAS.",
-    images: [nenatermGlosarioImg, nenatermPracticaImg, nenatermJuegoImg],
+    description: "App Android / iOS para aprender vocabulario técnico en inglés: glosario con buscador y filtros, cuatro minijuegos, text-to-speech y traductor, con Nena, una mascota en pixel art que reacciona a cada respuesta. Distribuida como APK con actualizaciones OTA vía EAS. La presenta una landing en Next.js con forma de nivel de videojuego: al scrollear, Nena recorre la app y cuenta cómo se hizo.",
+    images: [nenatermLandingImg],
     links: [
+      { label: "Ver Landing", url: "https://nenaterm.vercel.app", icon: <FiMonitor size={12} /> },
       { label: "Descargar APK", url: "https://github.com/antoninojoaquin/NenaTerm/releases/latest/download/NenaTerm.apk", icon: <FiDownload size={12} /> },
       repoLink("NenaTerm"),
     ],
-    technologies: [TECH.reactNative, TECH.expo, TECH.typescript],
+    technologies: [TECH.reactNative, TECH.expo, TECH.typescript, TECH.nextjs],
   },
   {
     id: 2,
@@ -105,7 +105,8 @@ const PLATFORM_LABEL: Record<Platform, { label: string; icon: React.ReactNode }>
 const ProjectPreview = ({ project }: { project: Project }) => {
   const imgClass = "w-full h-full object-cover transition-all duration-700 ease-out can-hover:grayscale group-hover/img:grayscale-0";
 
-  if (project.platform === "web") {
+  // A single image is a landscape capture (web or landing); several are phone screens
+  if (project.images.length === 1) {
     return (
       <div className="relative overflow-hidden rounded-sm aspect-video">
         <img
@@ -199,7 +200,7 @@ const ProjectCard = memo(({ project, index }: { project: Project; index: number 
           <ProjectPreview project={project} />
         </a>
 
-        <div className={`grid grid-cols-1 gap-2 ${project.platform === "mobile" ? "mt-4" : ""}`}>
+        <div className={`grid grid-cols-1 gap-2 ${project.images.length > 1 ? "mt-4" : ""}`}>
           {/* On touch screens the image overlay never shows, so the main link gets its own button */}
           <a
             href={project.links[0].url}
